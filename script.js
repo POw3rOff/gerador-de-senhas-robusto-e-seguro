@@ -45,66 +45,140 @@ function generateRandomPassword(length, charset) {
 function generateNickname() {
     const nicknameTypes = {
         metin2: [
-            "Dragão", "Guerreiro", "Samurai", "Ninja", "Monge", "Mago", "Arqueiro", "Sacerdote", "Lutador", "Necromante",
-            "Espadachim", "Bárbaro", "Mercenário", "Assassino", "Xamã", "Mestre", "Lendário", "Feiticeiro", "Eremita", "Guerreiro da Noite",
-            "Trovador", "Cavaleiro", "Paladino", "Protetor", "Falcão", "Bruxo", "Feiticeira", "Xerife", "Destruidor", "Arcanista",
-            "Patrulheiro", "Cavaleiro Negro", "Alquimista", "Sábio", "Sombra", "Ranger", "Desbravador", "Legionário", "Espectro", "Lobo Solitário",
-            "Guardião", "Samurai do Vento", "Arconte", "Clérigo", "Exterminador", "Oráculo", "Dragoon", "Vigilante", "Corcel Negro",
-            "Salteador", "Custódio", "Duelista", "Fantasma", "Errante", "Templário", "Sacerdotisa", "Conquistador", "Encantador",
-            "Colecionador", "Anjo", "Açougueiro", "Pioneiro", "Vândalo", "Exorcista", "Mascate", "Nômade", "Infernal",
-            "Guarda Real", "Cavaleiro da Lua", "Fênix", "Ogro", "Sentinela", "Arpoador", "Vaqueiro", "Lenhador", "Exilado",
-            "Mercador", "Desafiante", "Caçador de Recompensas", "Sábio dos Cinco Elementos", "Cavaleiro da Esperança", "Combatente", "Astro", "Ilusionista", "Céu",
-            "Falcão Noturno", "Retalhador", "Punhado", "Golem", "Serpente", "Protetor das Almas", "Artífice", "Destruidor de Mundos", "Abutre", "Pérola Negra",
-            "Filho do Sol", "Colecionador de Troféus", "Exterminador de Demônios", "Gladiador", "Cristalino", "Guerreiro da Tempestade", "Destemido", "Implacável", "Andarilho",
-            "Cavaleiro dos Céus", "Guardião do Inferno", "Mestre das Sombras", "Guerreiro da Luz", "Nômade das Estrelas", "Senhor dos Ventos", "Marujo", "Viajante do Tempo", "Encantador de Almas", "Sombra da Lua",
-            "Vingador", "Destruidor do Caos", "Guerreiro Sagrado", "Cavaleiro da Rosa", "Andarilho das Profundezas"
-        ],
-        trollar: [
-            "Zueiro", "Trollador", "Gargalhada", "Brincalhão", "Risada", "Zombar", "Sorriso", "Festeiro", "Pilhéria", "Pitoresco",
-            "Piadista", "Cômico", "Maluco", "Divertido", "Engraçado", "Enganador", "Irreverente", "Doido", "Gozador", "Palhaço",
-            "Pândego", "Fanfarrão", "Leviano", "Farsante", "Trapaceiro", "Pilantra", "Patife", "Farsola", "Estapafúrdio", "Insolente",
-            "Desbocado", "Desbundado", "Gracinha", "Caipira", "Despachado", "Dado", "Agitado", "Peste", "Desaforado", "Irreverente",
-            "Ousado", "Atrevido", "Folclórico", "Brejeiro", "Biruta", "Farrista", "Alegre", "Cachaceiro", "Bêbado", "Farrapaz",
-            "Baladeiro", "Farra", "Bagunça", "Pândega", "Arruaça", "Baderna", "Confusão", "Bagunça", "Babado", "Fuzuê",
-            "Furdunço", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço",
-            "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço",
-            "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço",
-            "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço",
-            "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço",
-            "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço",
-            "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço",
-            "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço"
-        ],
+            "Drago", "Sombra", "Chama", "Furia", "Ventos",
+            "Trovão", "Espada", "Khan", "Monge", "Samurai",
+            "Ninja", "Shogun", "Imperador", "Lutador", "Conquistador",
+            "Clérigo", "Guerreiro", "Feiticeiro", "Assassino", "Arqueiro",
+            "Mago", "Caçador", "Lâmina", "Lobo", "Dragão",
+            "Fênix", "Leão", "Tigre", "Águia", "Lince",
+            "Ogre", "Grifo", "Cavaleiro", "Imortal", "Espectro",
+            "Arcanjo", "Valkyria", "Harpias", "Lâmia", "Quimera",
+            "Minotauro", "Cerbero", "Górgona", "Kraken", "Basilisco",
+            "Hidra", "Cíclope", "Guerreiro Celestial", "Samurai Negro", "Dragão da Noite",
+            "Mago Elemental", "Caçador das Trevas", "Ninja das Sombras", "Arqueiro Sagrado", "Lutador do Crepúsculo",
+            "Espada Divina", "Clérigo Místico", "Feiticeiro Sombrio", "Assassino da Lua", "Lâmina Flamejante",
+            "Cavaleiro de Dragão", "Guerreiro do Trovão", "Arqueiro da Tempestade", "Mago das Estrelas", "Ninja da Lua",
+            "Guardião da Luz", "Exterminador das Sombras", "Samurai de Fogo", "Dragão Alado", "Monge da Serenidade",
+            "Feiticeira das Trevas", "Lutador da Aurora", "Clériga do Sol", "Arqueira da Floresta", "Maga do Gelo",
+            "Caçador de Demônios", "Espadachim do Vento", "Ninja da Neblina", "Arqueiro Celestial", "Guerreira da Lua",
+            "Cavaleiro Negro", "Assassino Noturno", "Mago das Profundezas", "Lutadora do Deserto", "Clériga da Aurora",
+            "Guerreiro Elemental", "Mago da Tempestade", "Ninja do Trovão", "Arqueira da Lua", "Assassino das Sombras",
+            "Espadachim do Crepúsculo", "Caçadora de Almas", "Clériga do Crepúsculo", "Monge das Estrelas", "Arqueira da Aurora",
+            "Guerreiro Sagrado", "Mago da Noite", "Lutadora da Tempestade", "Espadachim da Lua", "Assassina das Trevas",
+            "Ninja do Crepúsculo", "Caçadora do Vento", "Clériga do Trovão", "Monge da Terra", "Arqueira do Fogo",
+            "Guerreiro da Escuridão", "Mago da Serenidade", "Lutadora do Crepúsculo", "Espadachim Celestial", "Ninja do Vento",
+            "Caçador da Lua", "Clériga das Estrelas", "Monge da Aurora", "Arqueira da Neblina", "Guerreiro do Sol"
+        ],        
+        discord: [
+            "CrispyChicken", "PixelPirate", "EchoEagle", "CrimsonCobra", "ShadowSpecter",
+            "NeonNinja", "SteelStorm", "FrostyFalcon", "CyberSphinx", "ThunderTiger",
+            "SavageSorcerer", "RapidRaven", "PixelPenguin", "CrimsonCoyote", "ShadowSamurai",
+            "NeonNemesis", "SteelShark", "FrostFox", "CyberCentaur", "ThunderTurtle",
+            "SavageScorpion", "RapidRaccoon", "DigitalDragon", "ElectricElephant", "EchoEmperor",
+            "GoldenGryphon", "JadeJaguar", "RubyRabbit", "SapphireSerpent", "EmeraldEagle",
+            "SilverPhoenix", "ObsidianOwl", "PlatinumPuma", "BronzeBear", "DiamondDolphin",
+            "ShadowStag", "NeonNightmare", "SteelSalamander", "FrostyFerret", "CyberCheetah",
+            "ThunderToucan", "SavageSpider", "RapidRat", "PixelPanther", "CrimsonCrow",
+            "NeonNymph", "SteelStork", "FrostFalcon", "CyberCoyote", "ThunderTigress",
+            "SavageShark", "RapidRabbit", "PixelPeacock", "CrimsonCrab", "ShadowShrimp",
+            "NeonNarwhal", "SteelSnail", "FrostyFrog", "CyberCondor", "ThunderTrogon",
+            "SavageSalamander", "RapidRaven", "PixelPenguin", "CrimsonCoyote", "ShadowSamurai",
+            "NeonNemesis", "SteelShark", "FrostFox", "CyberCentaur", "ThunderTurtle",
+            "SavageScorpion", "RapidRaccoon", "DigitalDragon", "ElectricElephant", "EchoEmperor",
+            "GoldenGryphon", "JadeJaguar", "RubyRabbit", "SapphireSerpent", "EmeraldEagle",
+            "SilverPhoenix", "ObsidianOwl", "PlatinumPuma", "BronzeBear", "DiamondDolphin",
+            "ShadowStag", "NeonNightmare", "SteelSalamander", "FrostyFerret", "CyberCheetah",
+            "ThunderToucan", "SavageSpider", "RapidRat", "PixelPanther", "CrimsonCrow",
+            "NeonNymph", "SteelStork", "FrostFalcon", "CyberCoyote", "ThunderTigress",
+            "SavageShark", "RapidRabbit", "PixelPeacock", "CrimsonCrab", "ShadowShrimp",
+            "NeonNarwhal", "SteelSnail", "FrostyFrog", "CyberCondor", "ThunderTrogon",
+            "SavageSalamander", "RapidRaven", "PixelPenguin", "CrimsonCoyote", "ShadowSamurai",
+            "NeonNemesis", "SteelShark", "FrostFox", "CyberCentaur", "ThunderTurtle",
+            "SavageScorpion", "RapidRaccoon", "DigitalDragon", "ElectricElephant", "EchoEmperor",
+            "GoldenGryphon", "JadeJaguar", "RubyRabbit", "SapphireSerpent", "EmeraldEagle",
+            "SilverPhoenix", "ObsidianOwl", "PlatinumPuma", "BronzeBear", "DiamondDolphin",
+            "ShadowStag", "NeonNightmare", "SteelSalamander", "FrostyFerret", "CyberCheetah",
+            "ThunderToucan", "SavageSpider", "RapidRat", "PixelPanther", "CrimsonCrow",
+            "NeonNymph", "SteelStork", "FrostFalcon", "CyberCoyote", "ThunderTigress",
+            "SavageShark", "RapidRabbit", "PixelPeacock", "CrimsonCrab", "ShadowShrimp",
+            "NeonNarwhal", "SteelSnail", "FrostyFrog", "CyberCondor", "ThunderTrogon",
+            "SavageSalamander"
+        ],        
         criminosos: [
-            "Gângster", "Bandido", "Ladrão", "Assassino", "Fugitivo", "Contrabandista", "Traficante", "Fora da Lei", "Mercenário", "Criminoso",
-            "Forasteiro", "Gatuno", "Marginal", "Canastrão", "Vigarista", "Dúbio", "Manhoso", "Pulha", "Trapaceiro", "Trambiqueiro",
-            "Matador", "Fugitivo", "Perigoso", "Vilão", "Infrator", "Vândalo", "Covarde", "Desprezível", "Aventureiro", "Pirata",
-            "Criminoso", "Foragido", "Delinquente", "Fujão", "Desonesto", "Fugaz", "Infrator", "Dissimulado", "Rústico", "Furtivo",
-            "Vagabundo", "Gatuno", "Rogue", "Safado", "Arruaceiro", "Invasor", "Atrevido", "Larápio", "Destruidor", "Atentado",
-            "Abutre", "Pistoleiro", "Mafioso", "Arrombador", "Arruaceiro", "Bandoleiro", "Baderneiro", "Contraventor", "Estrangeiro", "Desordeiro",
-            "Pistolero", "Punguista", "Sabotador", "Saqueador", "Traidor", "Culpado", "Caloteiro", "Debochado", "Devasso", "Evasivo",
-            "Esbórnia", "Furioso", "Grosseiro", "Intruso", "Libertino", "Malandro", "Maldoso", "Pândego", "Patife", "Tétrico",
-            "Truão", "Vulgar", "Açoitador", "Ameaçador", "Aniquilador", "Apavorante", "Arrebentador", "Atroz", "Bárbaro", "Brutal",
-            "Carrasco", "Chacal", "Demolidor", "Devastador", "Feroz", "Impiedoso", "Maléfico", "Monstruoso", "Sádico", "Sanguinário",
-            "Terrorista", "Tirano", "Violento", "Aberrante", "Assustador", "Bestial", "Chocante", "Cruel", "Desumano", "Diabólico",
-            "Horripilante", "Imundo", "Infernal", "Insano", "Macabro", "Perturbador", "Repugnante", "Sórdido", "Sombrio", "Terrível",
-            "Torpe", "Uivante", "Vicioso", "Vil", "Sobrevivente", "Carrasco", "Cavaleiro da Noite", "Espírito da Escuridão", "Fera", "Lobo"
+            "Scarface", "Vingador", "Assassino", "Caveira", "Máscara Negra",
+            "Sombra", "Faca", "Caçador", "Cérebro", "Carrasco",
+            "Cicatriz", "Espectro", "Tubarão", "Veneno", "Fantasma",
+            "Cobra", "Mercenário", "Psicopata", "Tempestade", "Raptor",
+            "Lâmina", "Capuz", "Sanguinário", "Vingança", "Máquina de Guerra",
+            "Anjo Caído", "Demônio", "Espião", "Caos", "Predador",
+            "Víbora", "Destruidor", "Fênix", "Escuridão", "Lobo Solitário",
+            "Carniceiro", "Hiena", "Fugitivo", "Crimson", "Tigre Dourado",
+            "Ladrão de Almas", "O Exilado", "Cabeça de Martelo", "Rufião", "Lâmina Afiada",
+            "Vírus", "Senhor do Crime", "Bandido", "Rei do Submundo", "Tigre das Sombras",
+            "O Corvo", "Rainha do Caos", "Coração Negro", "Mestre da Escuridão", "Ninja Negro",
+            "Guerreiro do Abismo", "O Indomável", "Silenciador", "Fúria Negra", "O Mercado Negro",
+            "Espião Sombrio", "O Inquisidor", "O Carrasco", "O Ceifador", "O Demolidor",
+            "A Mão Negra", "O Sinistro", "O Destruidor de Almas", "O Executor", "O Carrasco de Almas",
+            "Mestre do Terror", "Cavaleiro das Trevas", "O Predador da Noite", "O Ceifador de Almas", "O Açougueiro",
+            "O Senhor da Guerra", "O Lobo Solitário", "O Devorador de Almas", "O Drácula", "O Aniquilador",
+            "O Mestre das Sombras", "O Senhor do Abismo", "O Serpente Negra", "O Assassino das Trevas", "O Dragão Negro",
+            "A Serpente de Prata", "A Lâmina da Noite", "A Raposa do Crime", "O Mestre Assassino", "O Gavião Sombrio",
+            "O Lorde das Trevas", "A Dama do Terror", "A Sombra do Caos", "O Monstro de Ébano", "O Cavaleiro Negro",
+            "O Corvo Sangrento", "O Pecador", "A Estrela Negra", "A Serpente do Abismo", "O Punho de Ferro",
+            "A Fera Negra", "O Terror do Submundo", "O Malfeitor", "A Fera Voraz", "O Mestre da Escuridão",
+            "O Senhor da Noite", "O Carniceiro Noturno", "O Flagelo", "O Verme Noturno", "O Caçador das Trevas",
+            "O Azarado", "A Peste Negra", "A Lâmina Negra", "O Cavaleiro da Noite", "A Serpente Cruel",
+            "O Exterminador", "O Batedor", "O Estripador", "O Verdugo", "A Fera do Inferno",
+            "A Dama da Noite", "O Açougueiro", "A Fera do Abismo", "A Mão do Destino", "O Mestre da Foice",
+            "O Arauto da Morte", "O Senhor da Morte", "O Colosso Sombrio", "O Carrasco Noturno", "A Morte Negra",
+            "A Lâmina do Caos", "O Arquidemônio", "O Abutre Noturno", "O Lobo Assassino", "O Exterminador de Almas",
+            "O Carrasco das Sombras", "O Anjo da Morte", "A Fera da Escuridão", "A Fúria da Noite", "O Verdugo da Escuridão",
+            "O Mestre das Marés Negras", "A Fera Sanguinária", "A Dama das Trevas", "O Sombrio Noturno", "O Demônio da Noite",
+            "O Ceifador Sombrio", "O Anjo Negro", "O Escaravelho Negro", "A Serpente do Inferno", "O Verme das Trevas",
+            "O Exterminador da Noite", "A Mão da Ruína", "A Fera da Perdição", "A Serpente Alada", "A Mão Negra",
+            "O Devorador de Mentes", "O Diabo da Noite", "A Besta Alada", "O Anjo Negro", "A Fúria Negra",
+            "A Sombra do Mal", "A Serpente Noturna", "O Demônio da Escuridão", "O Terror do Ocaso", "O Mestre da Carnificina"
         ],
+        
         outros: [
-            "Mistério", "Aventureiro", "Herói", "Viajante", "Desconhecido", "Mágico", "Lendário", "Fantasma", "Sombra", "Misterioso",
-            "Abyssal", "Anônimo", "Aurora", "Barbáro", "Bravo", "Capitão", "Caçador", "Caos", "Celestial", "Cigano",
-            "Cinzento", "Cruel", "Crepúsculo", "Diamante", "Ditador", "Doutor", "Draconiano", "Dragão", "Espectro", "Eterno",
-            "Exilado", "Explorador", "Fada", "Faminto", "Fantástico", "Félix", "Fenômeno", "Fênix", "Feral", "Ferro",
-            "Fidalgo", "Floresta", "Fogo", "Frio", "Galáctico", "Gigante", "Gnomo", "Golem", "Guerreiro", "Hiena",
-            "Horizonte", "Imortal", "Impiedoso", "Indomável", "Infame", "Infernus", "Insólito", "Invencível", "Javali", "Justiça",
-            "Kitsune", "Labirinto", "Leão", "Lenda", "Lobisomem", "Luminoso", "Luz", "Machado", "Majestoso", "Malandro",
-            "Maníaco", "Manto", "Máscara", "Matador", "Mestre", "Metamorfo", "Misterioso", "Morcego", "Mutante", "Névoa",
-            "Nobre", "Noturno", "Oceano", "Oculto", "Ouro", "Peregrino", "Pirata", "Poção", "Predador", "Príncipe",
-            "Princesa", "Puro", "Raio", "Rainha", "Rei", "Ressurreição", "Rico", "Rogue", "Rubro", "Sábio",
-            "Sabre", "Sagrado", "Salamandra", "Sangue", "Sátiro", "Selvagem", "Serpente", "Sombras", "Spectro", "Sussurro",
-            "Talismã", "Tempestade", "Tigre", "Tormenta", "Trovão", "Tumulto", "Túmulo", "Ursinho", "Utopia", "Valente",
-            "Vampiro", "Vazio", "Vento", "Vida", "Viúvo", "Zombaria", "Zumbi"
+            // Hackers
+            "CyberGhost", "ByteBandit", "DataNinja", "HackMaster", "CodeCrusher",
+            "PixelPirate", "BinaryBrawler", "StealthStriker", "ViralVigilante", "DigitalDynamo",
+            "PhantomPhreak", "ZeroDayWarrior", "NetworkNemesis", "TechTerror", "FirewallFury",
+            "CrashOverride", "MatrixMarauder", "CircuitCobra", "PixelProwler", "ByteBuster",
+        
+            // Presidentes
+            "LibertyLincoln", "WashingtonWarrior", "JeffersonJuggernaut", "FranklinFreedom", "RooseveltRanger",
+            "KennedyKnight", "LincolnLegend", "AdamsAvenger", "JacksonJourneyman", "ObamaOracle",
+            "ClintonCrusader", "ReaganRuler", "EisenhowerEmpire", "TrumanTitan", "MadisonMajesty",
+            "CoolidgeCommander", "CarterConqueror", "HooverHero", "GrantGuardian", "WilsonWarlock",
+        
+            // Gangsteres
+            "Scarface", "Capone", "Gambino", "Dillinger", "BonnieClyde",
+            "Lansky", "Bugsy", "Luciano", "Gotti", "Lucky",
+            "Meyer", "Nucky", "Bumpy", "Chapo", "Pablo",
+        
+            // Ninjas
+            "ShadowShinobi", "SilentStriker", "StealthySlicer", "NinjaNebula", "BladeBlossom",
+            "SwiftShadow", "SneakySerpent", "DarkDragon", "MysticMask", "SteelySilhouette",
+            "PhantomFang", "CunningChameleon", "SwiftSparrow", "SilentStorm", "NimbleNinja",
+        
+            // Piratas
+            "Blackbeard", "CaptainHook", "Redbeard", "LongJohnSilver", "CalicoJack",
+            "AnneBonny", "MaryRead", "DavyJones", "CaptainKidd", "Bluebeard",
+            "BartholomewRoberts", "BlackBart", "EdwardTeach", "WilliamKidd", "HenryMorgan",
+        
+            // Espiões
+            "BondJamesBond", "BourneJasonBourne", "007Agent", "SpyMaster", "SecretSpecter",
+            "StealthSentry", "CipherSleuth", "CovertCommando", "UndercoverViper", "ShadowSpy",
+            "InvisibleIntruder", "DoubleAgent", "StealthySaboteur", "ClandestineCobra", "SecretiveSleuth",
+        
+            // Super-heróis
+            "SuperSonic", "CaptainCourage", "MightyMorpher", "IncredibleInvincible", "DynamicDynamo",
+            "PowerPatriot", "GuardianGalaxy", "VigilantVindicator", "HeroicHavoc", "MegaMarvel",
+            "EpicAvenger", "SupremeSentinel", "TitanicThunder", "RadiantRanger", "AwesomeAdventurer"
         ]
+        
     };
 
     const selectedTypes = [];
@@ -142,10 +216,13 @@ function toggleBackground() {
     const selectedBackground = backgroundToggle.value;
 
     if (selectedBackground === "white") {
-        body.style.backgroundColor = "#ffffff";
+        body.classList.remove("theme-dark");
+        body.classList.add("theme-light");
     } else if (selectedBackground === "black") {
-        body.style.backgroundColor = "#000000";
+        body.classList.remove("theme-light");
+        body.classList.add("theme-dark");
     }
 }
 
 generatePasswords(); // Chamada inicial para gerar as senhas quando a página é carregada
+
