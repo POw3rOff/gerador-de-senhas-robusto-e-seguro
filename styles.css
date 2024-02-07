@@ -1,43 +1,64 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* Estilos para o cabeçalho (header) */
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
 }
 
 .container {
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    text-align: center;
-    color: #333;
+.options-container {
+    display: flex;
+    justify-content: space-between;
 }
 
-label {
-    font-weight: bold;
+.options-section {
+    flex: 1;
+    margin-right: 20px;
 }
 
-input[type="number"] {
-    width: 100%;
-    padding: 8px;
+.options-section h2 {
+    margin-top: 0;
+}
+
+.password-options,
+.nickname-options {
+    margin-bottom: 20px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 5px;
 }
 
 button {
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
 }
 
 button:hover {
@@ -46,8 +67,51 @@ button:hover {
 
 #passwordOutput {
     margin-top: 20px;
-    padding: 10px;
+    padding: 15px;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 16px;
+}
+
+#passwordOutput p {
+    margin-bottom: 10px;
+}
+
+.footer {
+    width: 100%;
+    background-color: #007bff;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.footer .background-toggle label {
+    color: #fff;
+}
+
+.background-toggle select {
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+}
+
+.background-toggle select:focus {
+    outline: none;
+}
+
+.background-toggle option {
+    background-color: #fff;
+    color: #333;
+}
+
+.background-toggle option[value="white"] {
+    background-color: #fff;
+    color: #333;
+}
+
+.background-toggle option[value="black"] {
+    background-color: #333;
+    color: #fff;
 }
