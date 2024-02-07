@@ -10,9 +10,17 @@
     <div class="container">
         <h1>Gerador de Senhas</h1>
         <form id="passwordForm">
-            <label for="length">Comprimento da Senha:</label>
+            <label for="length">Comprimento das Senhas:</label>
             <input type="number" id="length" name="length" min="4" max="32" value="12" required>
-            <button type="button" onclick="generatePassword()">Gerar Senha</button>
+            <input type="checkbox" id="includeLetters" name="includeLetters" checked>
+            <label for="includeLetters">Incluir Letras</label>
+            <input type="checkbox" id="includeNumbers" name="includeNumbers" checked>
+            <label for="includeNumbers">Incluir Números</label>
+            <input type="checkbox" id="includeSymbols" name="includeSymbols" checked>
+            <label for="includeSymbols">Incluir Símbolos</label>
+            <input type="checkbox" id="includeAll" name="includeAll" checked>
+            <label for="includeAll">Incluir Todas</label>
+            <button type="button" onclick="generatePasswords()">Gerar Senhas</button>
         </form>
         <div id="passwordOutput"></div>
     </div>
