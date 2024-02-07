@@ -3,29 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Senhas</title>
+    <title>Gerador de Senhas e Nicknames</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header class="header">
+        <h1>Gerador de Senhas e Nicknames</h1>
+    </header>
     <div class="container">
-        <h1>Gerador de Senhas</h1>
-        <form id="passwordForm">
-            <label for="length">Comprimento das Senhas:</label>
-            <input type="number" id="length" name="length" min="4" max="32" value="12" required>
-            <input type="checkbox" id="includeLetters" name="includeLetters" checked>
-            <label for="includeLetters">Incluir Letras</label>
-            <input type="checkbox" id="includeNumbers" name="includeNumbers" checked>
-            <label for="includeNumbers">Incluir Números</label>
-            <input type="checkbox" id="includeSymbols" name="includeSymbols" checked>
-            <label for="includeSymbols">Incluir Símbolos</label>
-            <input type="checkbox" id="includeAll" name="includeAll" checked>
-            <label for="includeAll">Incluir Todas</label>
-            <button type="button" onclick="generatePasswords()">Gerar Senhas</button>
-        </form>
-        <div id="passwordOutput"></div>
+        <div class="options-container">
+            <div class="options-section">
+                <h2>Gerador de Senhas</h2>
+                <div class="password-options">
+                    <label for="length">Comprimento das Senhas:</label>
+                    <input type="number" id="length" name="length" min="4" max="32" value="12" required>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="includeLetters" name="includeLetters" checked>
+                    <label for="includeLetters">Incluir Letras</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="includeNumbers" name="includeNumbers" checked>
+                    <label for="includeNumbers">Incluir Números</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="includeSymbols" name="includeSymbols" checked>
+                    <label for="includeSymbols">Incluir Símbolos</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="includeAll" name="includeAll" checked>
+                    <label for="includeAll">Incluir Todas</label>
+                </div>
+                <button type="button" onclick="generatePasswords()">Gerar Senhas</button>
+                <div id="passwordOutput"></div>
+            </div>
+            <div class="options-section">
+                <h2>Gerador de Nicknames</h2>
+                <div class="nickname-options">
+                    <div class="checkbox-label">
+                        <input type="checkbox" id="metin2" name="nicknameType" value="metin2" checked>
+                        <label for="metin2">Personagens de Metin2</label>
+                    </div>
+                    <div class="checkbox-label">
+                        <input type="checkbox" id="trollar" name="nicknameType" value="trollar" checked>
+                        <label for="trollar">Trollar</label>
+                    </div>
+                    <div class="checkbox-label">
+                        <input type="checkbox" id="criminosos" name="nicknameType" value="criminosos" checked>
+                        <label for="criminosos">Criminosos</label>
+                    </div>
+                    <div class="checkbox-label">
+                        <input type="checkbox" id="outros" name="nicknameType" value="outros" checked>
+                        <label for="outros">Outros</label>
+                    </div>
+                </div>
+                <button type="button" onclick="generateNickname()">Gerar Nickname</button>
+                <div id="nicknameOutput"></div>
+            </div>
+        </div>
     </div>
+    <footer class="footer">
+        <div class="background-toggle">
+            <label for="backgroundToggle">Escolher Fundo:</label>
+            <select id="backgroundToggle" onchange="toggleBackground()">
+                <option value="white">Branco</option>
+                <option value="black">Preto</option>
+            </select>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
-
-
