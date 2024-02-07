@@ -44,10 +44,67 @@ function generateRandomPassword(length, charset) {
 
 function generateNickname() {
     const nicknameTypes = {
-        metin2: ["Dragão", "Guerreiro", "Samurai", "Ninja", "Monge", "Mago", "Arqueiro", "Sacerdote", "Lutador", "Necromante"],
-        trollar: ["Zueiro", "Trollador", "Gargalhada", "Brincalhão", "Risada", "Zombar", "Sorriso", "Festeiro", "Pilhéria", "Pitoresco"],
-        criminosos: ["Gângster", "Bandido", "Ladrão", "Assassino", "Fugitivo", "Contrabandista", "Traficante", "Fora da Lei", "Mercenário", "Criminoso"],
-        outros: ["Mistério", "Aventureiro", "Herói", "Viajante", "Desconhecido", "Mágico", "Lendário", "Fantasma", "Sombra", "Misterioso"]
+        metin2: [
+            "Dragão", "Guerreiro", "Samurai", "Ninja", "Monge", "Mago", "Arqueiro", "Sacerdote", "Lutador", "Necromante",
+            "Espadachim", "Bárbaro", "Mercenário", "Assassino", "Xamã", "Mestre", "Lendário", "Feiticeiro", "Eremita", "Guerreiro da Noite",
+            "Trovador", "Cavaleiro", "Paladino", "Protetor", "Falcão", "Bruxo", "Feiticeira", "Xerife", "Destruidor", "Arcanista",
+            "Patrulheiro", "Cavaleiro Negro", "Alquimista", "Sábio", "Sombra", "Ranger", "Desbravador", "Legionário", "Espectro", "Lobo Solitário",
+            "Guardião", "Samurai do Vento", "Arconte", "Clérigo", "Exterminador", "Oráculo", "Dragoon", "Vigilante", "Corcel Negro",
+            "Salteador", "Custódio", "Duelista", "Fantasma", "Errante", "Templário", "Sacerdotisa", "Conquistador", "Encantador",
+            "Colecionador", "Anjo", "Açougueiro", "Pioneiro", "Vândalo", "Exorcista", "Mascate", "Nômade", "Infernal",
+            "Guarda Real", "Cavaleiro da Lua", "Fênix", "Ogro", "Sentinela", "Arpoador", "Vaqueiro", "Lenhador", "Exilado",
+            "Mercador", "Desafiante", "Caçador de Recompensas", "Sábio dos Cinco Elementos", "Cavaleiro da Esperança", "Combatente", "Astro", "Ilusionista", "Céu",
+            "Falcão Noturno", "Retalhador", "Punhado", "Golem", "Serpente", "Protetor das Almas", "Artífice", "Destruidor de Mundos", "Abutre", "Pérola Negra",
+            "Filho do Sol", "Colecionador de Troféus", "Exterminador de Demônios", "Gladiador", "Cristalino", "Guerreiro da Tempestade", "Destemido", "Implacável", "Andarilho",
+            "Cavaleiro dos Céus", "Guardião do Inferno", "Mestre das Sombras", "Guerreiro da Luz", "Nômade das Estrelas", "Senhor dos Ventos", "Marujo", "Viajante do Tempo", "Encantador de Almas", "Sombra da Lua",
+            "Vingador", "Destruidor do Caos", "Guerreiro Sagrado", "Cavaleiro da Rosa", "Andarilho das Profundezas"
+        ],
+        trollar: [
+            "Zueiro", "Trollador", "Gargalhada", "Brincalhão", "Risada", "Zombar", "Sorriso", "Festeiro", "Pilhéria", "Pitoresco",
+            "Piadista", "Cômico", "Maluco", "Divertido", "Engraçado", "Enganador", "Irreverente", "Doido", "Gozador", "Palhaço",
+            "Pândego", "Fanfarrão", "Leviano", "Farsante", "Trapaceiro", "Pilantra", "Patife", "Farsola", "Estapafúrdio", "Insolente",
+            "Desbocado", "Desbundado", "Gracinha", "Caipira", "Despachado", "Dado", "Agitado", "Peste", "Desaforado", "Irreverente",
+            "Ousado", "Atrevido", "Folclórico", "Brejeiro", "Biruta", "Farrista", "Alegre", "Cachaceiro", "Bêbado", "Farrapaz",
+            "Baladeiro", "Farra", "Bagunça", "Pândega", "Arruaça", "Baderna", "Confusão", "Bagunça", "Babado", "Fuzuê",
+            "Furdunço", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço",
+            "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço",
+            "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço",
+            "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço",
+            "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço",
+            "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço",
+            "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço",
+            "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço", "Fuzuê", "Pegação", "Folga", "Folia", "Furdunço"
+        ],
+        criminosos: [
+            "Gângster", "Bandido", "Ladrão", "Assassino", "Fugitivo", "Contrabandista", "Traficante", "Fora da Lei", "Mercenário", "Criminoso",
+            "Forasteiro", "Gatuno", "Marginal", "Canastrão", "Vigarista", "Dúbio", "Manhoso", "Pulha", "Trapaceiro", "Trambiqueiro",
+            "Matador", "Fugitivo", "Perigoso", "Vilão", "Infrator", "Vândalo", "Covarde", "Desprezível", "Aventureiro", "Pirata",
+            "Criminoso", "Foragido", "Delinquente", "Fujão", "Desonesto", "Fugaz", "Infrator", "Dissimulado", "Rústico", "Furtivo",
+            "Vagabundo", "Gatuno", "Rogue", "Safado", "Arruaceiro", "Invasor", "Atrevido", "Larápio", "Destruidor", "Atentado",
+            "Abutre", "Pistoleiro", "Mafioso", "Arrombador", "Arruaceiro", "Bandoleiro", "Baderneiro", "Contraventor", "Estrangeiro", "Desordeiro",
+            "Pistolero", "Punguista", "Sabotador", "Saqueador", "Traidor", "Culpado", "Caloteiro", "Debochado", "Devasso", "Evasivo",
+            "Esbórnia", "Furioso", "Grosseiro", "Intruso", "Libertino", "Malandro", "Maldoso", "Pândego", "Patife", "Tétrico",
+            "Truão", "Vulgar", "Açoitador", "Ameaçador", "Aniquilador", "Apavorante", "Arrebentador", "Atroz", "Bárbaro", "Brutal",
+            "Carrasco", "Chacal", "Demolidor", "Devastador", "Feroz", "Impiedoso", "Maléfico", "Monstruoso", "Sádico", "Sanguinário",
+            "Terrorista", "Tirano", "Violento", "Aberrante", "Assustador", "Bestial", "Chocante", "Cruel", "Desumano", "Diabólico",
+            "Horripilante", "Imundo", "Infernal", "Insano", "Macabro", "Perturbador", "Repugnante", "Sórdido", "Sombrio", "Terrível",
+            "Torpe", "Uivante", "Vicioso", "Vil", "Sobrevivente", "Carrasco", "Cavaleiro da Noite", "Espírito da Escuridão", "Fera", "Lobo"
+        ],
+        outros: [
+            "Mistério", "Aventureiro", "Herói", "Viajante", "Desconhecido", "Mágico", "Lendário", "Fantasma", "Sombra", "Misterioso",
+            "Abyssal", "Anônimo", "Aurora", "Barbáro", "Bravo", "Capitão", "Caçador", "Caos", "Celestial", "Cigano",
+            "Cinzento", "Cruel", "Crepúsculo", "Diamante", "Ditador", "Doutor", "Draconiano", "Dragão", "Espectro", "Eterno",
+            "Exilado", "Explorador", "Fada", "Faminto", "Fantástico", "Félix", "Fenômeno", "Fênix", "Feral", "Ferro",
+            "Fidalgo", "Floresta", "Fogo", "Frio", "Galáctico", "Gigante", "Gnomo", "Golem", "Guerreiro", "Hiena",
+            "Horizonte", "Imortal", "Impiedoso", "Indomável", "Infame", "Infernus", "Insólito", "Invencível", "Javali", "Justiça",
+            "Kitsune", "Labirinto", "Leão", "Lenda", "Lobisomem", "Luminoso", "Luz", "Machado", "Majestoso", "Malandro",
+            "Maníaco", "Manto", "Máscara", "Matador", "Mestre", "Metamorfo", "Misterioso", "Morcego", "Mutante", "Névoa",
+            "Nobre", "Noturno", "Oceano", "Oculto", "Ouro", "Peregrino", "Pirata", "Poção", "Predador", "Príncipe",
+            "Princesa", "Puro", "Raio", "Rainha", "Rei", "Ressurreição", "Rico", "Rogue", "Rubro", "Sábio",
+            "Sabre", "Sagrado", "Salamandra", "Sangue", "Sátiro", "Selvagem", "Serpente", "Sombras", "Spectro", "Sussurro",
+            "Talismã", "Tempestade", "Tigre", "Tormenta", "Trovão", "Tumulto", "Túmulo", "Ursinho", "Utopia", "Valente",
+            "Vampiro", "Vazio", "Vento", "Vida", "Viúvo", "Zombaria", "Zumbi"
+        ]
     };
 
     const selectedTypes = [];
