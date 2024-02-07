@@ -35,30 +35,32 @@
                     <label for="includeAll">Incluir Todas</label>
                 </div>
                 <button type="button" onclick="generatePasswords()">Gerar Senhas</button>
-                <div id="passwordOutput"></div>
+                <div id="passwordOutput" class="input-output"></div>
             </div>
             <div class="options-section">
                 <h2>Gerador de Nicknames</h2>
                 <div class="nickname-options">
-                    <div class="checkbox-label">
-                        <input type="checkbox" id="metin2" name="nicknameType" value="metin2" checked>
-                        <label for="metin2">Personagens de Metin2</label>
-                    </div>
-                    <div class="checkbox-label">
-                        <input type="checkbox" id="trollar" name="nicknameType" value="trollar" checked>
-                        <label for="trollar">Trollar</label>
-                    </div>
-                    <div class="checkbox-label">
-                        <input type="checkbox" id="criminosos" name="nicknameType" value="criminosos" checked>
-                        <label for="criminosos">Criminosos</label>
-                    </div>
-                    <div class="checkbox-label">
-                        <input type="checkbox" id="outros" name="nicknameType" value="outros" checked>
-                        <label for="outros">Outros</label>
-                    </div>
+                    <label for="nicknameLength">Comprimento do Nickname:</label>
+                    <input type="number" id="nicknameLength" name="nicknameLength" min="4" max="32" value="12" required>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="metin2" name="nicknameType" value="metin2" checked>
+                    <label for="metin2">Personagens de Metin2</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="trollar" name="nicknameType" value="trollar" checked>
+                    <label for="trollar">Trollar</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="criminosos" name="nicknameType" value="criminosos" checked>
+                    <label for="criminosos">Criminosos</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="outros" name="nicknameType" value="outros" checked>
+                    <label for="outros">Outros</label>
                 </div>
                 <button type="button" onclick="generateNickname()">Gerar Nickname</button>
-                <div id="nicknameOutput"></div>
+                <div id="nicknameOutput" class="input-output"></div>
             </div>
         </div>
     </div>
