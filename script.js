@@ -1,25 +1,16 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const passwordForm = document.getElementById("passwordForm");
+function generatePassword() {
+    const length = document.getElementById("length").value;
     const passwordOutput = document.getElementById("passwordOutput");
+    const password = generateRandomPassword(length);
+    passwordOutput.innerHTML = "<strong>Senha Gerada:</strong> " + password;
+}
 
-    passwordForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        const length = document.getElementById("length").value;
-
-        fetch("/generate-password", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ length: length })
-        })
-        .then(response => response.json())
-        .then(data => {
-            passwordOutput.innerHTML = "<strong>Senha Gerada:</strong> " + data.password;
-        })
-        .catch(error => {
-            console.error("Erro ao gerar a senha:", error);
-        });
-    });
-});
+function generateRandomPassword(length) {
+    const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+    let password = "";
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        password += charset[randomIndex];
+    }
+    return password;
+}
