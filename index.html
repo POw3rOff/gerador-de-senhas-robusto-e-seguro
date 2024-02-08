@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de Senhas e Nicknames</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Importação do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-eXYV4R6g6Ewe3c50x4o0XLIID0wMT2u90O3WKVp+yeAnz9VJpVWvfHWsZ8mq9/4FzjOhj/IKzVxC/B5Gds6Wg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="theme-light"> <!-- Definindo o tema branco como padrão -->
     <header class="header">
@@ -13,7 +15,7 @@
     <div class="container">
         <div class="options-container">
             <div class="options-section">
-                <h2>Gerador de Senhas</h2>
+                <h2><i class="fas fa-key"></i> Gerador de Senhas</h2>
                 <div class="password-options">
                     <label for="length">Comprimento das Senhas:</label>
                     <input type="number" id="length" name="length" min="4" max="32" value="12" required>
@@ -37,8 +39,9 @@
                 <button type="button" onclick="generatePasswords()">Gerar Senhas</button>
                 <div id="passwordOutput" class="input-output"></div>
             </div>
+            
             <div class="options-section">
-                <h2>Gerador de Nicknames</h2>
+                <h2><i class="fas fa-user"></i> Gerador de Nicknames</h2>
                 <div class="nickname-options">
                     <label for="nicknameLength">Comprimento do Nickname:</label>
                     <input type="number" id="nicknameLength" name="nicknameLength" min="4" max="32" value="12" required>
@@ -62,6 +65,7 @@
                 <button type="button" onclick="generateNickname()">Gerar Nickname</button>
                 <div id="nicknameOutput" class="input-output"></div>
             </div>
+            
         </div>
     </div>
     <footer class="footer">
