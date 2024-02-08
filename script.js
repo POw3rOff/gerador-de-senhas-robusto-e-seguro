@@ -198,7 +198,7 @@ function generateNickname() {
 
     selectedTypes.forEach(function(type) {
         const nickname = generateRandomNickname(nicknameTypes[type]);
-        generatedNicknames += "<div class='nickname-box'><strong>" + type.charAt(0).toUpperCase() + type.slice(1) + ":</strong> " + nickname + "</div>";
+        generatedNicknames += "<p><strong>" + type.charAt(0).toUpperCase() + type.slice(1) + ":</strong> " + nickname + "<br></p>";
     });
 
     const nicknameOutput = document.getElementById("nicknameOutput");
@@ -225,4 +225,3 @@ function toggleBackground() {
 }
 
 generatePasswords(); // Chamada inicial para gerar as senhas quando a página é carregada
-
